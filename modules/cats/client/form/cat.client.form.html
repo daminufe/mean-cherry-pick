@@ -1,0 +1,43 @@
+<section>
+    <div class="page-header">
+        <h1>Create cat</h1>
+    </div>
+
+    <div class="col-md-12">
+        <form class="form-horizontal" ng-submit="catCtrl.save()">
+            <fieldset>
+
+                <div class="form-group">
+                    <legend>Name</legend>
+                    <input name="title" type="text" ng-model="catCtrl.cat.title" class="form-control" placeholder="Title">
+                </div>
+
+                <div class="form-group">
+                    <legend>Gender</legend>
+                    <label><input name="gender" type="radio" ng-model="catCtrl.cat.gender" value="male"> Male</label><br>
+                    <label><input name="gender" type="radio" ng-model="catCtrl.cat.gender" value="female"> Female</label>
+                </div>
+
+                <div class="form-group">
+                    <legend>Birth year</legend>
+                    <input name="birthYear" type="text" ng-model="catCtrl.cat.birthYear" class="form-control" placeholder="2016">
+                </div>
+
+                <div class="form-group">
+                    <legend>Color</legend>
+                    <div ng-repeat="color in catCtrl.availableColours">
+                        <label>
+                            <input name="color" type="radio" ng-model="catCtrl.cat.color" ng-value="color">
+                            {{ color }}
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Create</button>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</section>

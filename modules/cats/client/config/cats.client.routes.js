@@ -1,0 +1,36 @@
+(function () {
+    'use strict';
+    const MODULE_PATH = 'modules/cats/client';
+
+    angular
+        .module('cats.routes')
+        .config(routeConfig);
+
+    routeConfig.$inject = ['$stateProvider'];
+
+    function routeConfig($stateProvider) {
+        $stateProvider
+            .state('cats', {
+                abstract: true,
+                url: '/cats',
+                template: '<ui-view />'
+            })
+
+            .state('cats.create', {
+                url: '/create',
+                templateUrl: `${MODULE_PATH}/form/cat.client.form.html`,
+                controller: 'CatsController',
+                controllerAs: 'catCtrl',
+                resolve: {
+                    cat: ['CatsService', function (CatsService) {
+                        return new CatsService();
+                    }]
+                },
+                data: {
+                    roles: ['user'],
+                    pageTitle: 'Create cat'
+                }
+            })
+            ;
+    }
+}());

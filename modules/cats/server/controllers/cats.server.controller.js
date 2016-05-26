@@ -62,7 +62,7 @@ function read (req, res) {
 function update(req, res) {
     let cat = req.cat;
 
-    cat = _.extend(cat, req.body.content);
+    cat = _.extend(cat, req.body);
 
     cat.save()
         .then((cat) => res.json(cat))

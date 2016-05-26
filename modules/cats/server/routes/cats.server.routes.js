@@ -9,7 +9,7 @@ module.exports = function (app) {
         .post(cats.create);
 
     app.route('/api/cats/:catId').all(catsPolicy.isAllowed)
-        // .get(cats.read);
+        .get(cats.read)
         .put(cats.update);
 
     app.param('catId', cats.catById);

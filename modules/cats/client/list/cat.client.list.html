@@ -3,7 +3,7 @@
         <h1>Cats</h1>
     </div>
     <div class="list-group">
-        <a ng-repeat="cat in catsListCtrl.cats" class="list-group-item">
+        <a ui-sref="cats.cat.edit({ catId: cat._id })" ng-repeat="cat in catsListCtrl.cats" class="list-group-item">
             <small class="list-group-item-text">
                 Posted on
                 <span ng-bind="cat.created | date:'mediumDate'"></span>

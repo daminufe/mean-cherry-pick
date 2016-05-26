@@ -16,10 +16,14 @@
         vm.save = save;
 
         function save() {
-            vm.cat.$save(successCallback, errorCallback);
+            if (vm.cat._id) {
+                vm.cat.$update(successCallback, errorCallback);
+            } else {
+                vm.cat.$save(successCallback, errorCallback);
+            }
 
             function successCallback(res) {
-                $state.go('home', {
+                $state.go('cats.list', {
                     catId: res._id
                 });
                 toastr.success('Cat saved successfully', 'Meow');

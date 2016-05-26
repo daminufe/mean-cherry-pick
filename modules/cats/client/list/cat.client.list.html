@@ -10,9 +10,13 @@
                 by
                 <span ng-bind="cat.createdBy.displayName"></span>
             </small>
-            <pre>{{cat}}</pre>
+
             <h4 class="list-group-item-heading" ng-bind="cat.name"></h4>
-            <p class="list-group-item-text" ng-bind="cat.color"></p>
+            <p class="list-group-item-text">
+                (<span ng-bind="cat.color"></span>) -
+                (<span ng-bind="cat.birthYear"></span>) -
+                (<span ng-bind="cat.gender"></span>)
+            </p>
         </a>
     </div>
     <div class="alert alert-warning text-center" ng-if="vm.cats.$resolved && !vm.cats.length">

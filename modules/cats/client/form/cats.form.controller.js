@@ -3,7 +3,7 @@
 
     angular
         .module('cats')
-        .controller(CatsController.name, CatsController);
+        .controller('CatsController', CatsController);
 
     CatsController.$inject = ['$state', 'cat', 'toastr'];
 

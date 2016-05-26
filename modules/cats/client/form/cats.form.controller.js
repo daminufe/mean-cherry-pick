@@ -14,7 +14,6 @@
 
         vm.cat = cat;
         vm.save = save;
-        vm.remove = remove;
 
         function save () {
             if (vm.cat._id) {
@@ -33,22 +32,6 @@
             function errorCallback(res) {
                 vm.error = res.data.message;
                 toastr.error(`Error saving cat. ${ vm.error }`, 'Gurrhr');
-            }
-        }
-
-        function remove () {
-            vm.cat.$delete(successCallback, errorCallback);
-
-            function successCallback(res) {
-                $state.go('cats.list', {
-                    catId: res._id
-                });
-                toastr.success('Cat removed successfully', 'Meow');
-            }
-
-            function errorCallback(res) {
-                vm.error = res.data.message;
-                toastr.error(`Error removing cat. ${ vm.error }`, 'Gurrhr');
             }
         }
     }

@@ -10,7 +10,8 @@ module.exports = function (app) {
 
     app.route('/api/cats/:catId').all(catsPolicy.isAllowed)
         .get(cats.read)
-        .put(cats.update);
+        .put(cats.update)
+        .delete(cats.delete);
 
     app.param('catId', cats.catById);
 

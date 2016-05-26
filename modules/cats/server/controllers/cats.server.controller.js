@@ -12,6 +12,7 @@ exports.catById = catById;
 exports.create = create;
 exports.read = read;
 exports.update = update;
+exports.delete = remove;
 
 
 function create (req, res) {
@@ -65,6 +66,16 @@ function update(req, res) {
     cat = _.extend(cat, req.body);
 
     cat.save()
+        .then((cat) => res.json(cat))
+        .catch((err) => res.status(400).send({
+            message: errorHandler.getErrorMessage(err)
+        }));
+}
+
+function remove (req, res) {
+    var cat = req.cat;
+
+    cat.remove()
         .then((cat) => res.json(cat))
         .catch((err) => res.status(400).send({
             message: errorHandler.getErrorMessage(err)

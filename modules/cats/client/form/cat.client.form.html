@@ -1,7 +1,15 @@
 <section>
     <div class="page-header">
+
         <h1 ng-if="!catCtrl.cat._id">Create cat</h1>
-        <h1 ng-if="catCtrl.cat._id">Edit cat</h1>
+        <h1 ng-if="catCtrl.cat._id">
+            <span>Edit cat</span>
+
+            <button class="btn btn-danger pull-right" ng-click="catCtrl.remove()">
+                <span class="glyphicon glyphicon-trash"></span> Delete cat
+            </button>
+
+        </h1>
     </div>
 
     <div class="col-md-12">

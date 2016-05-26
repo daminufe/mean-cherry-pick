@@ -12,13 +12,13 @@
             title: 'Cats',
             state: 'cats',
             type: 'dropdown',
-            roles: ['user']
+            roles: ['*']
         });
 
-        // menuService.addSubMenuItem('topbar', 'cats', {
-        //     title: 'List Cats',
-        //     state: 'cats.list'
-        // });
+        menuService.addSubMenuItem('topbar', 'cats', {
+            title: 'List Cats',
+            state: 'cats.list'
+        });
 
         menuService.addSubMenuItem('topbar', 'cats', {
             title: 'Create cat',

@@ -5,15 +5,9 @@
         .module('cats.services')
         .factory('CatsService', CatsService);
 
-    CatsService.$inject = ['$resource'];
+    CatsService.$inject = [];
 
-    function CatsService($resource) {
-        return $resource('api/cats/:catId', {
-            catId: '@_id'
-        }, {
-            update: {
-                method: 'PUT'
-            }
-        });
+    function CatsService() {
+        
     }
 }());

@@ -19,7 +19,7 @@
             </p>
         </a>
     </div>
-    <div class="alert alert-warning text-center" ng-if="vm.cats.$resolved && !vm.cats.length">
+    <div class="alert alert-warning text-center" ng-if="catsListCtrl.cats.$resolved && !catsListCtrl.cats.length">
         No cats yet, why don't you <a ui-sref="cats.create">create one</a>?
     </div>
 </section>

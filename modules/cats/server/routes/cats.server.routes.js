@@ -8,10 +8,5 @@ module.exports = function (app) {
         .get(cats.list)
         .post(cats.create);
 
-    app.route('/api/cats/:catId').all(catsPolicy.isAllowed)
-        .get(cats.read)
-        .put(cats.update);
-
-    app.param('catId', cats.catById);
 
 };

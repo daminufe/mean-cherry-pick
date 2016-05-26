@@ -16,11 +16,7 @@
         vm.save = save;
 
         function save() {
-            if (vm.cat._id) {
-                vm.cat.$update(successCallback, errorCallback);
-            } else {
-                vm.cat.$save(successCallback, errorCallback);
-            }
+            vm.cat.$save(successCallback, errorCallback);
 
             function successCallback(res) {
                 $state.go('cats.list', {

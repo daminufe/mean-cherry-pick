@@ -44,27 +44,27 @@
                 }
             })
 
-            .state('cats.cat', {
-                url: '/:catId',
-                abstract: true,
-                template: `<ui-view />`,
-                resolve: {
-                    cat: ['CatsService', '$stateParams', function (CatsService, $stateParams) {
-                        return CatsService.get({ catId: $stateParams.catId });
-                    }]
-                }
-            })
-
-            .state('cats.cat.edit', {
-                url: '',
-                templateUrl: `${MODULE_PATH}/form/cat.client.form.html`,
-                controller: 'CatsController',
-                controllerAs: 'catCtrl',
-                data: {
-                    roles: ['user'],
-                    pageTitle: 'Edit cat'
-                }
-            })
+            // .state('cats.cat', {
+            //     url: '/:catId',
+            //     abstract: true,
+            //     template: `<ui-view />`,
+            //     resolve: {
+            //         cat: ['CatsService', '$stateParams', function (CatsService, $stateParams) {
+            //             return CatsService.get({ catId: $stateParams.catId });
+            //         }]
+            //     }
+            // })
+            //
+            // .state('cats.cat.edit', {
+            //     url: '',
+            //     templateUrl: `${MODULE_PATH}/form/cat.client.form.html`,
+            //     controller: 'CatsController',
+            //     controllerAs: 'catCtrl',
+            //     data: {
+            //         roles: ['user'],
+            //         pageTitle: 'Edit cat'
+            //     }
+            // })
             ;
     }
 }());

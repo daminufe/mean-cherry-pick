@@ -21,6 +21,8 @@ function create (req, res) {
 
 function list (req, res) {
     Cat.find()
+        .populate('createdBy')
+        .exec()
         .then((cats) => res.json(cats))
         .catch((err) => res.status(400).send({
             message: errorHandler.getErrorMessage(err)

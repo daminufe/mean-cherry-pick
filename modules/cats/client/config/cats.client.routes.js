@@ -16,6 +16,18 @@
                 template: '<ui-view />'
             })
 
+            .state('cats.list', {
+                url: '',
+                templateUrl: `${MODULE_PATH}/list/cat.client.list.html`,
+                controller: 'CatsListController',
+                controllerAs: 'catsListCtrl',
+                resolve: {
+                    cats: ['CatsService', function (CatsService) {
+                        return CatsService.query();
+                    }]
+                }
+            })
+
             .state('cats.create', {
                 url: '/create',
                 templateUrl: `${MODULE_PATH}/form/cat.client.form.html`,

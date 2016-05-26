@@ -5,11 +5,9 @@
         .module('cats')
         .controller('CatsListController', CatsListController);
 
-    CatsListController.$inject = ['cats'];
+    CatsListController.$inject = [];
 
-    function CatsListController(cats) {
-        var vm = this;
+    function CatsListController() {
 
-        vm.cats = cats;
     }
 }());

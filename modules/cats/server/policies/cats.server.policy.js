@@ -10,11 +10,17 @@ exports.invokeRolesPolicies = function () {
         allows: [{
             resources: '/api/cats',
             permissions: ['get', 'post']
+        }, {
+            resources: '/api/cats/:catId',
+            permissions: ['put']
         }]
     }, {
         roles: ['user', 'guest', 'admin'],
         allows: [{
             resources: '/api/cats',
+            permissions: ['get']
+        }, {
+            resources: '/api/cats/:catId',
             permissions: ['get']
         }]
     }]);
